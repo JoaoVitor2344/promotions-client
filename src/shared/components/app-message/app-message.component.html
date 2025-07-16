@@ -1,0 +1,8 @@
+<div *ngIf="message$ | async as msg" [ngClass]="{
+  'bg-green-500': msg.type === 'success',
+  'bg-red-500': msg.type === 'error',
+  'bg-blue-500': msg.type === 'info'
+}" class="fixed top-4 left-1/2 -translate-x-1/2 px-6 py-3 rounded text-white shadow-lg z-50">
+  {{ msg.text }}
+  <app-button color="danger" (clicked)="close()">&times;</app-button>
+</div> 

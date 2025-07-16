@@ -1,0 +1,6 @@
+<div class="p-4">
+  <h2 class="text-2xl font-bold mb-4">Importação Magalu</h2>
+  <app-button color="primary" (clicked)="importMagalu()" [loading]="loading" [disabled]="loading">
+    {{ loading ? 'Importando...' : 'Importar Promoções do Magalu' }}
+  </app-button>
+</div> 

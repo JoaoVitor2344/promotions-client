@@ -1,0 +1,24 @@
+<div class="p-4 max-w-3xl mx-auto w-full">
+  <div class="flex flex-col sm:flex-row justify-between items-center mb-4 gap-2">
+    <h2 class="text-2xl font-bold">Agendamentos</h2>
+    <app-button color="success" (clicked)="goToNew()">Novo Agendamento</app-button>
+  </div>
+  <div class="overflow-x-auto">
+    <ul *ngIf="schedules.length; else loading" class="min-w-[320px]">
+      <li *ngFor="let schedule of schedules" class="mb-2 p-4 bg-white rounded shadow flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+        <div>
+          <div class="font-semibold text-base sm:text-lg">{{ schedule.name }}</div>
+          <div class="text-gray-600 text-sm">{{ schedule.date | date:'short' }}</div>
+        </div>
+        <div class="flex gap-2 w-full sm:w-auto">
+          <app-button color="primary" (clicked)="editSchedule(schedule.id)">Editar</app-button>
+          <app-button color="danger" (clicked)="deleteSchedule(schedule.id)">Remover</app-button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <ng-template #loading>
+    <div>Carregando agendamentos...</div>
+  </ng-template>
+  <div *ngIf="!schedules.length && !loading" class="text-gray-500 mt-4">Nenhum agendamento encontrado.</div>
+</div> 
