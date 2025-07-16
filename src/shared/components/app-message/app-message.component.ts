@@ -5,11 +5,12 @@ import {
   MessageType,
 } from '../../services/app-message.service';
 import { Observable } from 'rxjs';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-message',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonComponent],
   templateUrl: './app-message.component.html',
   styleUrls: ['./app-message.component.css'],
 })

@@ -1,18 +1,25 @@
 <div class="p-4">
   <div class="flex justify-between items-center mb-4">
     <h2 class="text-2xl font-bold">Promoções Pendentes</h2>
-    <app-button color="primary" (clicked)="autoApprove()">Aprovar Todas</app-button>
+    <app-button color="primary" (clicked)="autoApprove()"
+      >Aprovar Todas</app-button
+    >
   </div>
   <ul *ngIf="pending.length; else loading">
-    <li *ngFor="let promo of pending" class="mb-2 p-4 bg-white rounded shadow flex justify-between items-center">
+    <li
+      *ngFor="let promo of pending"
+      class="mb-2 p-4 bg-white rounded shadow flex justify-between items-center"
+    >
       <div>
         <div class="font-semibold">{{ promo.title }}</div>
         <div class="text-gray-600">{{ promo.description }}</div>
       </div>
-      <app-button color="success" (clicked)="approve(promo.id)">Aprovar</app-button>
+      <app-button color="success" (clicked)="approve(promo.id)"
+        >Aprovar</app-button
+      >
     </li>
   </ul>
   <ng-template #loading>
     <div>Carregando promoções pendentes...</div>
   </ng-template>
-</div> 
+</div>

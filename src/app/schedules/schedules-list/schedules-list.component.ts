@@ -4,11 +4,12 @@ import { SchedulesService } from '../../../shared/services/schedules.service';
 import { Schedule } from '../../../shared/models/schedule.model';
 import { CommonModule, DatePipe, AsyncPipe } from '@angular/common';
 import { AppMessageService } from '../../../shared/services/app-message.service';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-schedules-list',
   standalone: true,
-  imports: [CommonModule, DatePipe, AsyncPipe],
+  imports: [CommonModule, DatePipe, AsyncPipe, ButtonComponent],
   templateUrl: './schedules-list.component.html',
   styleUrls: ['./schedules-list.component.css']
 })

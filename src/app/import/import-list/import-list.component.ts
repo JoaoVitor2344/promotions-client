@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { ImportService } from '../../../shared/services/import.service';
 import { AppMessageService } from '../../../shared/services/app-message.service';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-import-list',
   standalone: true,
   templateUrl: './import-list.component.html',
-  styleUrls: ['./import-list.component.css']
+  styleUrls: ['./import-list.component.css'],
+  imports: [ButtonComponent]
 })
 export class ImportListComponent {
   loadingAli = false;

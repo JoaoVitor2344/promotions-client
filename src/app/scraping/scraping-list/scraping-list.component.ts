@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { ScrapingService } from '../../../shared/services/scraping.service';
 import { AppMessageService } from '../../../shared/services/app-message.service';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-scraping-list',
   standalone: true,
   templateUrl: './scraping-list.component.html',
-  styleUrls: ['./scraping-list.component.css']
+  styleUrls: ['./scraping-list.component.css'],
+  imports: [ButtonComponent]
 })
 export class ScrapingListComponent {
   loading = false;

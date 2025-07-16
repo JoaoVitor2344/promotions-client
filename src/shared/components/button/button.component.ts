@@ -1,25 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  template: `
-    <button
-      [type]="type"
-      [disabled]="disabled || loading"
-      [ngClass]="buttonClass"
-      (click)="onClick($event)"
-      class="px-4 py-2 rounded font-semibold transition-colors duration-200"
-    >
-      <span *ngIf="loading" class="animate-spin mr-2">⏳</span>
-      <ng-content></ng-content>
-    </button>
-  `,
-  styleUrls: ['./button.component.css']
+  imports: [CommonModule],
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.css'],
 })
 export class ButtonComponent {
   @Input() type: 'button' | 'submit' = 'button';
-  @Input() color: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' = 'primary';
+  @Input() color: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' =
+    'primary';
   @Input() loading = false;
   @Input() disabled = false;
   @Output() clicked = new EventEmitter<Event>();
@@ -46,4 +38,4 @@ export class ButtonComponent {
       this.clicked.emit(event);
     }
   }
-} 
+}

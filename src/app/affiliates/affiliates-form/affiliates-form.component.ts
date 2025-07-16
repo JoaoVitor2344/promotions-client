@@ -4,11 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AffiliatesService } from '../../../shared/services/affiliates.service';
 import { Affiliate } from '../../../shared/models/affiliate.model';
 import { AppMessageService } from '../../../shared/services/app-message.service';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-affiliates-form',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule],
+  imports: [ReactiveFormsModule, ButtonComponent],
   templateUrl: './affiliates-form.component.html',
   styleUrls: ['./affiliates-form.component.css']
 })

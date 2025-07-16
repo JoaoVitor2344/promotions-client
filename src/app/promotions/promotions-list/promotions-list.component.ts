@@ -4,11 +4,12 @@ import { PromotionsService } from '../../../shared/services/promotions.service';
 import { Promotion } from '../../../shared/models/promotion.model';
 import { AppMessageService } from '../../../shared/services/app-message.service';
 import { CommonModule } from '@angular/common';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-promotions-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonComponent],
   templateUrl: './promotions-list.component.html',
   styleUrls: ['./promotions-list.component.css'],
 })

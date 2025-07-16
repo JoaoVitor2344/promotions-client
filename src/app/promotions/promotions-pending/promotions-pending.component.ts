@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { PromotionsService } from '../../../shared/services/promotions.service';
 import { Promotion } from '../../../shared/models/promotion.model';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-promotions-pending',
+  standalone: true,
+  imports: [ButtonComponent],
   templateUrl: './promotions-pending.component.html',
-  styleUrls: ['./promotions-pending.component.css']
+  styleUrls: ['./promotions-pending.component.css'],
 })
 export class PromotionsPendingComponent implements OnInit {
   pending: Promotion[] = [];
@@ -18,8 +21,8 @@ export class PromotionsPendingComponent implements OnInit {
 
   loadPending() {
     this.service.getPendingPromotions().subscribe({
-      next: (data) => this.pending = data,
-      error: () => this.pending = []
+      next: (data) => (this.pending = data),
+      error: () => (this.pending = []),
     });
   }
 

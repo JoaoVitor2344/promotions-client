@@ -4,11 +4,12 @@ import { AffiliatesService } from '../../../shared/services/affiliates.service';
 import { Affiliate } from '../../../shared/models/affiliate.model';
 import { AppMessageService } from '../../../shared/services/app-message.service';
 import { CommonModule } from '@angular/common';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-affiliates-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonComponent],
   templateUrl: './affiliates-list.component.html',
   styleUrls: ['./affiliates-list.component.css']
 })

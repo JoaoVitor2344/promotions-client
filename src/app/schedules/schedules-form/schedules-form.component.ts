@@ -4,11 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SchedulesService } from '../../../shared/services/schedules.service';
 import { Schedule } from '../../../shared/models/schedule.model';
 import { AppMessageService } from '../../../shared/services/app-message.service';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-schedules-form',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule],
+  imports: [ReactiveFormsModule, ButtonComponent],
   templateUrl: './schedules-form.component.html',
   styleUrls: ['./schedules-form.component.css']
 })

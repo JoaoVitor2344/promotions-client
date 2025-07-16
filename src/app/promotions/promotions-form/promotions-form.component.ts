@@ -4,11 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PromotionsService } from '../../../shared/services/promotions.service';
 import { Promotion } from '../../../shared/models/promotion.model';
 import { AppMessageService } from '../../../shared/services/app-message.service';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-promotions-form',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule],
+  imports: [ReactiveFormsModule, ButtonComponent],
   templateUrl: './promotions-form.component.html',
   styleUrls: ['./promotions-form.component.css']
 })
