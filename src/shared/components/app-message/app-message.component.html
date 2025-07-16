@@ -1,8 +1,11 @@
-<div *ngIf="message$ | async as msg" [ngClass]="{
-  'bg-green-500': msg.type === 'success',
-  'bg-red-500': msg.type === 'error',
-  'bg-blue-500': msg.type === 'info'
-}" class="fixed top-4 left-1/2 -translate-x-1/2 px-6 py-3 rounded text-white shadow-lg z-50">
-  {{ msg.text }}
-  <app-button color="danger" (clicked)="close()">&times;</app-button>
+<div [ngClass]="{
+  'bg-green-500': (message$ | async)?.type === 'success',
+  'bg-red-500': (message$ | async)?.type === 'error',
+  'bg-blue-500': (message$ | async)?.type === 'info',
+  'toast-anim': true,
+  'toast-hide': !(message$ | async)
+}"
+class="fixed bottom-4 right-4 px-6 py-3 rounded text-white shadow-lg z-50 min-w-[250px]">
+  {{ (message$ | async)?.text }}
+  <div class="progress-bar" [style.width.%]="progress"></div>
 </div> 
