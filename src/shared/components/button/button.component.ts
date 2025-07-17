@@ -14,23 +14,32 @@ export class ButtonComponent {
     'primary';
   @Input() loading = false;
   @Input() disabled = false;
+  @Input() customClass = '';
   @Output() clicked = new EventEmitter<Event>();
 
   get buttonClass() {
+    let baseClass =
+      'px-4 py-2 rounded font-semibold transition-colors duration-200';
     switch (this.color) {
       case 'primary':
-        return 'bg-blue-600 text-white hover:bg-blue-700';
+        baseClass += ' bg-blue-600 text-white hover:bg-blue-700';
+        break;
       case 'secondary':
-        return 'bg-gray-500 text-white hover:bg-gray-600';
+        baseClass += ' bg-gray-500 text-white hover:bg-gray-600';
+        break;
       case 'success':
-        return 'bg-green-600 text-white hover:bg-green-700';
+        baseClass += ' bg-green-600 text-white hover:bg-green-700';
+        break;
       case 'danger':
-        return 'bg-red-600 text-white hover:bg-red-700';
+        baseClass += ' bg-red-600 text-white hover:bg-red-700';
+        break;
       case 'warning':
-        return 'bg-yellow-500 text-white hover:bg-yellow-600';
+        baseClass += ' bg-yellow-500 text-white hover:bg-yellow-600';
+        break;
       default:
-        return 'bg-blue-600 text-white hover:bg-blue-700';
+        baseClass += ' bg-blue-600 text-white hover:bg-blue-700';
     }
+    return `${baseClass} ${this.customClass}`.trim();
   }
 
   onClick(event: Event) {

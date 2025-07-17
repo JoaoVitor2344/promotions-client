@@ -3,7 +3,6 @@
   [disabled]="disabled || loading"
   [ngClass]="buttonClass"
   (click)="onClick($event)"
-  class="px-4 py-2 rounded font-semibold transition-colors duration-200"
 >
   <span *ngIf="loading" class="animate-spin mr-2">⏳</span>
   <ng-content></ng-content>

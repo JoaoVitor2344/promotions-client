@@ -1,1 +1,19 @@
- 
+.btn-aliexpress {
+  background-color: var(--color-aliexpress) !important;
+  color: #fff !important;
+}
+
+.btn-amazon {
+  background-color: var(--color-amazon) !important;
+  color: #232f3e !important;
+}
+
+.btn-mercadolivre {
+  background-color: var(--color-mercadolivre) !important;
+  color: #333 !important;
+}
+
+.btn-shopee {
+  background-color: var(--color-shopee) !important;
+  color: #fff !important;
+} 

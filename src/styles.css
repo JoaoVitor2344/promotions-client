@@ -10,6 +10,11 @@
   --color-surface: #ffffff;
   --color-text: #1e293b;
   --color-muted: #94a3b8;
+  /* Cores das lojas */
+  --color-aliexpress: #FF4747;
+  --color-amazon: #FF9900;
+  --color-mercadolivre: #FFE600;
+  --color-shopee: #FF5722;
 }
 
 @import "tailwindcss";
